@@ -1,0 +1,141 @@
+<div class="container-fluid py-4">
+  <!-- Header -->
+  <div class="text-center mb-4">
+    <h3 class="fw-bold text-primary">
+      <i class="bi bi-bank"></i> Institute Fees Management System
+    </h3>
+    <p class="text-muted">Track and manage student fee payments efficiently</p>
+  </div>
+
+  <!-- Summary Cards -->
+  <div class="row text-center mb-4">
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-body">
+          <h6 class="text-secondary"><i class="bi bi-people"></i> TOTAL STUDENTS</h6>
+          <h3 class="fw-bold text-primary">12</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-body">
+          <h6 class="text-secondary">
+            <i class="bi bi-check-circle-fill text-success"></i> FULL PAID
+          </h6>
+          <h3 class="fw-bold text-success">1</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-body">
+          <h6 class="text-secondary">
+            <i class="bi bi-hourglass-split text-warning"></i> PARTIAL PAID
+          </h6>
+          <h3 class="fw-bold text-warning">5</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-body">
+          <h6 class="text-secondary"><i class="bi bi-x-circle-fill text-danger"></i> NOT PAID</h6>
+          <h3 class="fw-bold text-danger">6</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Student Enrollments -->
+  <div class="card shadow-sm border-0 rounded-3">
+    <div
+      class="card-header bg-primary text-white d-flex justify-content-between align-items-center"
+    >
+      <h5 class="mb-0"><i class="bi bi-journal-text"></i> Student Enrollments</h5>
+      <button class="btn btn-light btn-sm fw-semibold" (click)="openNewEnrollmentDialog()">
+        <i class="bi bi-plus-circle"></i> New Enrollment
+      </button>
+    </div>
+
+    <div class="card-body">
+      <!-- Search & Filter -->
+      <div class="row mb-3">
+        <div class="col-md-8">
+          <input type="text" class="form-control" placeholder="Search by student name..." />
+        </div>
+        <div class="col-md-4">
+          <select class="form-select">
+            <option>All Status</option>
+            <option>Full Paid</option>
+            <option>Partial Paid</option>
+            <option>Not Paid</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle text-center">
+          <thead class="table-primary">
+            <tr>
+              <th>SR NO</th>
+              <th>STUDENT NAME</th>
+              <th>TOTAL FEES</th>
+              <th>EMI-1</th>
+              <th>EMI-2</th>
+              <th>EMI-3</th>
+              <th>TOTAL RECEIVED</th>
+              <th>STATUS</th>
+              <th>ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>ABC</td>
+              <td>₹5,000</td>
+              <td>₹2,000</td>
+              <td>₹1,000</td>
+              <td>-</td>
+              <td>₹3,000</td>
+              <td><span class="badge bg-warning text-dark">PARTIAL PAID</span></td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm"><i class="bi bi-eye"></i></button>
+                <button class="btn btn-outline-warning btn-sm"><i class="bi bi-pencil"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>EFG</td>
+              <td>₹6,000</td>
+              <td>₹3,000</td>
+              <td>₹3,000</td>
+              <td>-</td>
+              <td>₹6,000</td>
+              <td><span class="badge bg-success">FULL PAID</span></td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm"><i class="bi bi-eye"></i></button>
+                <button class="btn btn-outline-warning btn-sm"><i class="bi bi-pencil"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>WWW</td>
+              <td>₹7,000</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>₹0</td>
+              <td><span class="badge bg-danger">NOT PAID</span></td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm"><i class="bi bi-eye"></i></button>
+                <button class="btn btn-outline-warning btn-sm"><i class="bi bi-pencil"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
