@@ -7,6 +7,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const materials = [
   MatButtonModule,
@@ -16,6 +19,9 @@ const materials = [
   MatCardModule,
   MatFormFieldModule,
   MatDialogModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
 ];
 
 @NgModule({

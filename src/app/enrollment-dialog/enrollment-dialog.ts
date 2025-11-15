@@ -20,7 +20,6 @@ export interface Batch {
 export class EnrollmentDialog {
   enrollmentForm!: FormGroup;
   enrollmentData: newEnrollment = new newEnrollment();
-  showEmiSection = false;
   batches: Batch[] = [];
   private _myservice = inject(Myservice);
 
@@ -44,7 +43,6 @@ export class EnrollmentDialog {
     this._myservice.getbatches().subscribe({
       next: (data: Batch[]): any => {
         this.batches = data;
-        console.log('Batches:', this.batches);
       },
       error: (error) => {
         console.error('Error fetching batches:', error);
@@ -55,10 +53,24 @@ export class EnrollmentDialog {
   submit() {
     if (this.enrollmentForm.valid) {
       console.log('Enrollment Data:', this.enrollmentForm.value);
-      alert('Enrollment submitted successfully!');
+      this.saveEnrollment();
     } else {
       this.enrollmentForm.markAllAsTouched();
     }
+  }
+
+  saveEnrollment() {
+    debugger;
+    const formValue: newEnrollment = this.enrollmentForm.value;
+    this._myservice.addNewEnrollment(formValue).subscribe({
+      next: (response: any) => {
+        console.log('Enrollment added successfully:', response);
+        this.dialogRef.close(true);
+      },
+      error: (error) => {
+        alert('Error adding enrollment: ' + error.error);
+      },
+    });
   }
 
   close() {

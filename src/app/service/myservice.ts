@@ -11,4 +11,15 @@ export class Myservice {
   getbatches() {
     return this.http.get<Batch[]>('https://api.freeprojectapi.com/api/FeesTracking/batches');
   }
+
+  addNewEnrollment(enrollmentData: any) {
+    return this.http.post(
+      'https://api.freeprojectapi.com/api/FeesTracking/addNewEnrollment',
+      enrollmentData
+    );
+  }
+
+  getAllEnrollments() {
+    return this.http.get('https://api.freeprojectapi.com/api/FeesTracking/getAllEnrollments');
+  }
 }

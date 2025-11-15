@@ -8,6 +8,4 @@ import { FeesTracking } from './fees-tracking/fees-tracking';
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {
-  protected readonly title = signal('Fees-tracking');
-}
+export class App {}
