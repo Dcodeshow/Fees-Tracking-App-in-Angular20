@@ -61,7 +61,7 @@ export class FeesTracking {
     });
     console.log(dialogRef);
     dialogRef.afterClosed().subscribe((result) => {
-      if (result) console.log('Form submitted:', result);
+      if (result) this.getAllEnrollments();
     });
   }
 
