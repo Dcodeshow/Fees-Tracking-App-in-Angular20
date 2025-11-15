@@ -41,7 +41,7 @@ export class FeesTracking {
     'emi1',
     'emi2',
     'emi3',
-    'contactNo',
+
     'status',
   ];
 

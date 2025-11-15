@@ -1,7 +1,7 @@
 export class newEnrollment {
   enrollmentId: number;
   studentName: string;
-  contactNo: string;
+  contactNo: number | string;
   totalFees: string;
   emi1: string;
   emi2: string;
