@@ -22,4 +22,18 @@ export class Myservice {
   getAllEnrollments() {
     return this.http.get('https://api.freeprojectapi.com/api/FeesTracking/getAllEnrollments');
   }
+
+  updateEnrollment(enrollmentData: any) {
+    return this.http.put(
+      'https://api.freeprojectapi.com/api/FeesTracking/updateEnrollment?id=' +
+        enrollmentData.enrollmentId,
+      enrollmentData
+    );
+  }
+
+  deleteEnrollment(enrollmentId: number) {
+    return this.http.delete(
+      'https://api.freeprojectapi.com/api/FeesTracking/SoftDeleteById?id=' + enrollmentId
+    );
+  }
 }
