@@ -9,6 +9,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { CommonModule } from '@angular/common';
 import { StatusColor } from '../directives/status-color';
+import { Idashboard } from '../Modal/modal';
 
 export interface PeriodicElement {
   batchName: string;
@@ -36,6 +37,7 @@ export class FeesTracking {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild('deleteDialog') deleteDialog!: TemplateRef<any>;
   enrollmentToDelete: any;
+  dashboardData: Idashboard | null = null;
   constructor() {}
   displayedColumns: string[] = [
     'enrollmentId',
@@ -73,6 +75,7 @@ export class FeesTracking {
 
   ngOnInit(): void {
     this.getAllEnrollments();
+    this.getDashboard();
   }
 
   getAllEnrollments(): void {
@@ -127,6 +130,18 @@ export class FeesTracking {
       },
       error: (err) => {
         console.error('Error deleting record:', err);
+      },
+    });
+  }
+
+  getDashboard() {
+    this._myservice.getDashboard().subscribe({
+      next: (data: any) => {
+        console.log('Dashboard Data:', data);
+        this.dashboardData = data;
+      },
+      error: (error) => {
+        console.error('Error fetching dashboard data:', error);
       },
     });
   }

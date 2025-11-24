@@ -12,8 +12,8 @@
     <div class="col-md-3 mb-3">
       <div class="card shadow-sm border-0 rounded-3">
         <div class="card-body">
-          <h6 class="text-secondary"><i class="bi bi-people"></i> TOTAL STUDENTS</h6>
-          <h3 class="fw-bold text-primary">12</h3>
+          <h6 class="text-secondary"><i class="bi bi-people"></i> TOTAL Batches</h6>
+          <h3 class="fw-bold text-primary">{{ dashboardData?.totalbatches }}</h3>
         </div>
       </div>
     </div>
@@ -21,9 +21,9 @@
       <div class="card shadow-sm border-0 rounded-3">
         <div class="card-body">
           <h6 class="text-secondary">
-            <i class="bi bi-check-circle-fill text-success"></i> FULL PAID
+            <i class="bi bi-check-circle-fill text-success"></i> Total Received
           </h6>
-          <h3 class="fw-bold text-success">1</h3>
+          <h3 class="fw-bold text-success">{{ dashboardData?.totalreceived }}</h3>
         </div>
       </div>
     </div>
@@ -31,17 +31,21 @@
       <div class="card shadow-sm border-0 rounded-3">
         <div class="card-body">
           <h6 class="text-secondary">
-            <i class="bi bi-hourglass-split text-warning"></i> PARTIAL PAID
+            <i class="bi bi-hourglass-split text-warning"></i> Total Pending
           </h6>
-          <h3 class="fw-bold text-warning">5</h3>
+          <h3 class="fw-bold text-warning">{{ dashboardData?.totalpending }}</h3>
         </div>
       </div>
     </div>
     <div class="col-md-3 mb-3">
       <div class="card shadow-sm border-0 rounded-3">
         <div class="card-body">
-          <h6 class="text-secondary"><i class="bi bi-x-circle-fill text-danger"></i> NOT PAID</h6>
-          <h3 class="fw-bold text-danger">6</h3>
+          <h6 class="text-secondary">
+            <i class="bi bi-x-circle-fill text-danger"></i> Total Amount To Be Received
+          </h6>
+          <h3 class="fw-bold text-danger">
+            {{ dashboardData?.totalamounttobereceived }}
+          </h3>
         </div>
       </div>
     </div>
@@ -70,11 +74,11 @@
           />
         </div>
         <div class="col-md-4">
-          <select class="form-select">
-            <option>All Status</option>
-            <option>Full Paid</option>
-            <option>Partial Paid</option>
-            <option>Not Paid</option>
+          <select class="form-select" (change)="applyFilter($event)">
+            <option value="All Status">All Status</option>
+            <option value="Full Paid">Full Paid</option>
+            <option value="Partial Paid">Partial Paid</option>
+            <option value="Not Paid">Not Paid</option>
           </select>
         </div>
         <div class="col-md-12 mt-3">

@@ -25,3 +25,17 @@ export class newEnrollment {
     this.isSoftDelete = true;
   }
 }
+
+export interface Idashboard {
+  totalbatches: number;
+  totalamounttobereceived: number;
+  totalreceived: number;
+  totalpending: IbatchwisePayment[];
+}
+export interface IbatchwisePayment {
+  batchid: number;
+  batchname: string;
+  totalamount: number;
+  totalreceived: number;
+  totalpending: number;
+}
