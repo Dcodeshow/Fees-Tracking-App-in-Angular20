@@ -65,7 +65,7 @@
 
     <div class="text-end mt-3">
       <button mat-stroked-button color="warn" type="button" (click)="close()">Cancel</button>
-      @if (enrollmentForm.get('totalFees')?.value == 0) {
+      @if (enrollmentForm.get('enrollmentId')?.value == 0) {
       <button mat-raised-button color="primary" type="submit" class="ms-2" (click)="submit()">
         Save
       </button>
